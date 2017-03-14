@@ -22,6 +22,8 @@ module.exports = function(req, res) {
     return;
   }
 
+  var results = [];
+
   yelp.search({term: term, location: 'San Francisco', limit: 3 })
     .then(function (data) {
     //var nKeys = data.keys(businesses).length;
@@ -32,15 +34,23 @@ module.exports = function(req, res) {
       if(data.businesses[i].id){
         //console.log(data.businesses[i].id);
         businessMap.set(data.businesses[i].name, data.businesses[i].id);
+        results[i] = ({
+          title : data.businesses[i].name,
+          text : data.businesses[i].id
+        });
       }
       else{
         break;
       }
     }
 
-    for(var[key,value] of businessMap.entries()){
-      console.log(key + ' = ' + value);
-    }
+    console.log(results);
+
+    res.json(results);
+
+    // for(var[key,value] of businessMap.entries()){
+    //   console.log(key + ' = ' + value);
+    // }
   })
 
 

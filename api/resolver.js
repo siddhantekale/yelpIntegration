@@ -23,9 +23,10 @@ function yelpReviewSearch(id, req, res)
   .then(function (data) {
     console.log(data.rating); // print the data returned from the API call
     var width = data.rating_img_url_small.width > 200 ? 200: data.rating_img_url.width;
-    var html = '<img style="max-width:100%;" src="' + data.rating_img_url_small + '" width="' + width + '"/>';
+    var businessName = '<a href=' + data.url + '>' +  data.name  + '</a>';
+    var starImg = '<img style="max-width:100%;" src="' + data.rating_img_url_small + '" width="' + width + '"/>';
     res.json({
-    body: data.name + "\n" + html + "\n" + data.location.address,
+    body: businessName + "\n" + starImg + "\n" + data.location.address,
     raw: true
   });
 
