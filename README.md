@@ -6,10 +6,10 @@ What it should look like?
 
 ## What it should look like:
 #Typeahead<br>
-![typeahead](https://raw.githubusercontent.com/sekale/yelpIntegration/master/screenshots/typeahead.gif)
+![typeahead](https://github.com/sekale/yelpIntegration/tree/master/screenshots/typeahead.gif)
 
 #Resolver<br>
-![resolver](https://raw.githubusercontent.com/sekale/yelpIntegration/master/screenshots/resolver.gif)
+![resolver](https://github.com/sekale/yelpIntegration/tree/master/screenshots/resolver.gif)
 
 ## Running locally
 
