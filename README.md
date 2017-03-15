@@ -1,22 +1,32 @@
-# Giphy Slash Command (Yelp Reviews Integration)for Mixmax
+#Slash Command (Yelp Reviews Integration) for Mixmax
 
-This is an open source Mixmax Slash Command. See <http://developer.mixmax.com/docs/overview-slash-commands#tutorial-building-mygiphy> for more information about how to use this example code in Mixmax.
+This is an open source Mixmax Slash Command.
 
-For a more complex example using multi-word search, see [Soundcloud command](https://github.com/simonxca/mixmax-soundcloud-slash-command).
+What it should look like?
+
+## What it should look like:
+#Typeahead<br>
+![typeahead](https://raw.githubusercontent.com/sekale/yelpIntegration/master/screenshots/typeahead.gif)
+
+#Resolver<br>
+![resolver](https://raw.githubusercontent.com/sekale/yelpIntegration/master/screenshots/resolver.gif)
 
 ## Running locally
 
 1. Install using `npm install`
 2. Run using `npm start`
 
-To simulate locally how Mixmax calls the typeahead URL (to return a JSON list of typeahead results), run:
+```
+To use this feature you need Yelp API V2 authentication keys and place them in a .env file in the root directory:
+The .env file should contain the following lines:
 
-```
-curl https://localhost:9145/typeahead?text=cats --insecure
-```
+consumer_key = SECRET CONSUMER KEY
+consumer_secret = SECRET CONSUMER SECRET
+token = SECRET CONSUMER TOKEN
+token_secret = SECRET CONSUMER TOKEN SECRET
 
-To simulate locally how Mixmax calls the resolver URL (to return HTML that goes into the email), run:
+To obtain Yelp API v2 keys which is required for this feature: https://www.yelp.com/developers/v2/manage_api_keys
 
-```
-curl https://localhost:9145/resolver?text=cats --insecure
-```
+Additional Required Packages:
+yelp
+dotenv

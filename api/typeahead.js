@@ -14,7 +14,6 @@ var yelp = new Yelp({
 // The Type Ahead API.
 module.exports = function(req, res) {
   var term = req.query.text.trim();
-
   if (!term) {  
     res.json([{
       title: '<i>(enter a search term)</i>',
@@ -27,11 +26,11 @@ module.exports = function(req, res) {
 
   yelp.search({term: term, location: 'San Francisco', limit: 3 })
     .then(function (data) {
-    var businessMap = new Map();
     for(i = 0 ; i < 3; ++i){
-      if(data.businesses[i].id){
+      //Error Check: whether list has been populated for businesses
+      if(data.businesses[i]){
         results[i] = ({
-          title : data.businesses[i].name + data.businesses[i].location.address,
+          title : data.businesses[i].name + ' ' + data.businesses[i].location.address,
           text : data.businesses[i].id
         });
       }
