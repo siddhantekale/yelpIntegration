@@ -1,4 +1,3 @@
-var request = require('request');
 var _ = require('underscore');
 var Yelp = require('yelp');
 
@@ -29,7 +28,7 @@ function yelpReviewSearch(id, req, res){
 
     //converts the address into a queryable form
     var retAddr = getAddressString(data.location.address + '', 
-        data.location.city + '') + '';
+      data.location.city + '') + '';
 
     var embedMapAddress = '<a href =\"https://www.google.com/maps/?q=' + 
       retAddr + '\">' +  data.location.address  + '</a>';

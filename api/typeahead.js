@@ -1,9 +1,9 @@
-var request = require('request');
 var _ = require('underscore');
 require('dotenv/config');
 
 var Yelp = require('yelp');
 
+//Yelp Authentication: https://www.yelp.com/developers/v2/manage_api_keys
 var yelp = new Yelp({
   consumer_key: process.env.consumer_key,
   consumer_secret: process.env.consumer_secret,
