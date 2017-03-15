@@ -1,6 +1,6 @@
 # Slash Command (Yelp Reviews Integration) for Mixmax
 
-This is an open source Mixmax Slash Command.
+This is an open source Mixmax Slash Command. It allows to make places that are mentioned into emails show attributes such as ratings and locations along with actual business name. This can help especially if a meeting is being planned and the sender(email) wants to give the receiver the flexibility of just clicking on the link to get to a location for desired meeting. Or it could be used to populate and give a receiver choices on where to meet by showing the place reviews alongside the business name and location. 
 
 What it should look like?
 
