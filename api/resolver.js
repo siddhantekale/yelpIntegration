@@ -3,17 +3,16 @@ var _ = require('underscore');
 var Yelp = require('yelp');
 
 var yelp = new Yelp({
- consumer_key: 'GqZQ9OM30OEV9-ovZl-sPg',
-  consumer_secret: 'alOrFdEQElm_5jSxAgnSE5QXNVs',
-  token: '_YxSdeLE9x2Koc8PopvMAxudEdxs66DN',
-  token_secret: '5EMiECqGns-2WnWSwEhR6QzB2Qs',
+  consumer_key: process.env.consumer_key,
+  consumer_secret: process.env.consumer_secret,
+  token: process.env.token,
+  token_secret: process.env.token_secret,
 });
 
 // The API that returns the in-email representation.
 module.exports = function(req, res) {
   var term = req.query.text.trim();
   yelpReviewSearch(term, req, res);
-  //handleSearchString(term, req, res);
 };
 
 function yelpReviewSearch(id, req, res)
