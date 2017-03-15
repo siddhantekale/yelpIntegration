@@ -26,16 +26,11 @@ module.exports = function(req, res) {
 
   yelp.search({term: term, location: 'San Francisco', limit: 3 })
     .then(function (data) {
-    //var nKeys = data.keys(businesses).length;
-    // console.log(data.businesses[0].id);
     var businessMap = new Map();
-
     for(i = 0 ; i < 3; ++i){
       if(data.businesses[i].id){
-        //console.log(data.businesses[i].id);
-        businessMap.set(data.businesses[i].name, data.businesses[i].id);
         results[i] = ({
-          title : data.businesses[i].name,
+          title : data.businesses[i].name + data.businesses[i].location.address,
           text : data.businesses[i].id
         });
       }
